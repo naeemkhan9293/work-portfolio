@@ -1,52 +1,71 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
+import { MagicCard } from "../ui/magic-card";
+import { useTheme } from "next-themes";
 
 const projects = [
   {
     title: "E-Commerce Platform",
     description:
-      "A full-stack e-commerce platform built with Next.js, Stripe, and MongoDB.",
-    tech: ["Next.js", "MongoDB", "Stripe", "Tailwind CSS"],
-    github: "#",
-    demo: "#",
+      "A full-stack e-commerce platform built with Next.js, Stripe, ,shadcn-ui and MongoDB.",
+    tech: [
+      "Next.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "shadcn-ui",
+      "typescript",
+      "React",
+    ],
+    github: "https://github.com/naeemkhan9293/woo-comerce",
+    demo: "https://woo-comerce.vercel.app/",
   },
   {
-    title: "Task Management App",
+    title: "Shopify-app",
     description:
-      "Real-time task management application with team collaboration features.",
-    tech: ["React", "Node.js", "Socket.io", "PostgreSQL"],
-    github: "#",
-    demo: "#",
+      "This Shopify app is built using Next.js and integrates seamlessly with Shopify to provide real-time store management features. ",
+    tech: ["React", "Nextjs", "shopify"],
+    github: "https://github.com/naeemkhan9293/shopify-app",
+    demo: "https://shopify-app-steel.vercel.app/",
   },
   {
-    title: "AI Content Generator",
-    description: "AI-powered content generation tool using OpenAI's GPT-3 API.",
-    tech: ["Python", "FastAPI", "React", "OpenAI"],
-    github: "#",
-    demo: "#",
-  },
-  {
-    title: "Social Media Dashboard",
+    title: "MarketsZ",
     description:
-      "Analytics dashboard for social media metrics and engagement tracking.",
-    tech: ["Next.js", "D3.js", "Firebase", "Material-UI"],
+      "Shop online using your unique MarketsZ USA & UK address, and  deliver to your home or business in the Dutch Caribbean.",
+    tech: ["Next.js", "Shadcn-ui", "Framer Motion", "Typescript"],
     github: "#",
-    demo: "#",
+    demo: "https://market-z-ten.vercel.app/",
+  },
+  {
+    title: "Biid-It",
+    description:
+      "Biid-It connects homeowners with contractors for renovation projects. Homeowners can post jobs, and contractors bid to offer their services",
+    tech: [
+      "React",
+      "Vite",
+      "Shadcn-ui",
+      "react-router-dom",
+      "Nodejs",
+      "Express-js",
+      "Mongodb",
+      "Stripe",
+    ],
+    github: "#",
+    demo: "https://market-z-ten.vercel.app/",
+  },
+  {
+    title: "Venday",
+    description:
+      "Connect care providers, hospitals, and agencies seamlessly. Experience the future of healthcare staffing today.",
+    tech: ["Nextjs", "Shadcn-ui", "Nodejs", "Express-js", "Mongodb", "Stripe"],
+    github: "#",
+    demo: "https://venday.vercel.app/",
   },
 ];
 
 export function Projects() {
+  const { theme } = useTheme();
   return (
     <section
       id="projects"
@@ -65,15 +84,16 @@ export function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <Card
+            <MagicCard
               key={index}
-              className="group transition-all duration-300  hover:bg-accent/50 flex flex-col"
+              className="cursor-pointer shadow-2xl p-5"
+              gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
             >
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
+              <div className="grid gap-5">
+                <div>
+                  <h1 className="text-xl font-bold">{project.title}</h1>
+                  <p>{project.description}</p>
+                </div>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, techIndex) => (
                     <span
@@ -84,27 +104,27 @@ export function Projects() {
                     </span>
                   ))}
                 </div>
-              </CardContent>
-              <CardFooter className="flex gap-4 mt-auto">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  asChild
-                  className="group-hover:border-primary/50"
-                >
-                  <Link href={project.github}>
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </Link>
-                </Button>
-                <Button size="sm" asChild>
-                  <Link href={project.demo}>
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
+                <div className="space-x-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    asChild
+                    className="group-hover:border-primary/50"
+                  >
+                    <Link href={project.github} target="_blank">
+                      <Github className="mr-2 h-4 w-4" />
+                      Code
+                    </Link>
+                  </Button>
+                  <Button size="sm" asChild>
+                    <Link href={project.demo} target="_blank">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Demo
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </MagicCard>
           ))}
         </div>
       </div>

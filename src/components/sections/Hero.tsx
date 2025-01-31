@@ -1,18 +1,19 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import { Code2 } from "lucide-react";
+import { AuroraText } from "../ui/aurora-text";
 
-export function Hero() {
+export function   Hero() {
   return (
     <section
       id="home"
-      className="w-full min-h-screen flex items-center justify-center py-20"
+      className="w-full min-h-screen flex items-center justify-center relative"
     >
       <div className="flex flex-col items-center text-center gap-4 max-w-3xl">
         <Code2 className="h-16 w-16 text-primary" />
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-          Hi, I'm Naeem
+          Hi, I'm{"\t"}
+          <AuroraText>Naeem</AuroraText>
         </h1>
         <p className="text-xl text-muted-foreground max-w-[42rem] leading-normal">
           Full Stack Developer crafting dynamic, scalable, and user-friendly

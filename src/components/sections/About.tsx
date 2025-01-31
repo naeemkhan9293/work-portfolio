@@ -1,6 +1,6 @@
 "use client";
-
-import { Card, CardContent } from "@/components/ui/card";
+import { MagicCard } from "../ui/magic-card";
+import { useTheme } from "next-themes";
 
 const skills = [
   "MongoDB",
@@ -13,10 +13,11 @@ const skills = [
   "Git",
   "Python",
   "SQL",
-  "Stripe"
+  "Stripe",
 ];
 
 export function About() {
+  const { theme } = useTheme();
   return (
     <section
       id="about"
@@ -35,14 +36,13 @@ export function About() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {skills.map((skill) => (
-            <Card
+            <MagicCard
               key={skill}
-              className="transition-all duration-300 hover:shadow-xl hover:bg-accent/50"
+              className="cursor-pointer flex-col items-center justify-center whitespace-nowrap p-6 shadow-2xl"
+              gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
             >
-              <CardContent className="flex items-center justify-center p-6">
-                <span className="font-medium">{skill}</span>
-              </CardContent>
-            </Card>
+              <span className="font-medium">{skill}</span>
+            </MagicCard>
           ))}
         </div>
       </div>
