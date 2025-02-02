@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Code2 } from "lucide-react";
 import { AuroraText } from "../ui/aurora-text";
+import { IconCloudDemo } from "../cloud-icons";
 
 export function Hero() {
   return (
@@ -27,6 +28,7 @@ export function Hero() {
           </Button>
         </div>
       </div>
+      <IconCloudDemo />
     </section>
   );
 }
