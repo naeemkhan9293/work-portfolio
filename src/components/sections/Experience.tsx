@@ -1,7 +1,6 @@
 "use client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ExperienceCard } from "../cards/experience-feature-card";
-import { MagicCard } from "../ui/magic-card";
 
 const education = [
   {

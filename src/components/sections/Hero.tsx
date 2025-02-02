@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Code2 } from "lucide-react";
 import { AuroraText } from "../ui/aurora-text";
 
-export function   Hero() {
+export function Hero() {
   return (
     <section
       id="home"
@@ -12,7 +12,7 @@ export function   Hero() {
       <div className="flex flex-col items-center text-center gap-4 max-w-3xl">
         <Code2 className="h-16 w-16 text-primary" />
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-          Hi, I'm{"\t"}
+          Hi, I&apos;m{"\t"}
           <AuroraText>Naeem</AuroraText>
         </h1>
         <p className="text-xl text-muted-foreground max-w-[42rem] leading-normal">

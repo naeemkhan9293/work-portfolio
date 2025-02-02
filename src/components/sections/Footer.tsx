@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Code, Code2, Github, Linkedin, Mail } from "lucide-react";
+import { Code2, Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (

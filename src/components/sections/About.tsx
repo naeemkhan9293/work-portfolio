@@ -27,10 +27,10 @@ export function About() {
         <div className="text-center space-y-4">
           <h2 className="text-3xl font-bold tracking-tight">About Me</h2>
           <p className="text-muted-foreground max-w-[85ch] mx-auto">
-            I'm a passionate full-stack developer with expertise in building
-            modern web applications. With a strong foundation in the MERN stack
-            and a keen eye for design, I create scalable and user-friendly
-            solutions that solve real-world problems.
+            I&apos;m a passionate full-stack developer with expertise in
+            building modern web applications. With a strong foundation in the
+            MERN stack and a keen eye for design, I create scalable and
+            user-friendly solutions that solve real-world problems.
           </p>
         </div>
 
