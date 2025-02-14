@@ -42,7 +42,7 @@ export function About() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {skills.map((skill, idx) => (
-            <BlurFade delay={0.1 * idx} inView>
+            <BlurFade delay={0.1 * idx} inView key={idx}>
               <MagicCard
                 key={skill}
                 className="cursor-pointer flex-col items-center justify-center whitespace-nowrap p-6 shadow-2xl"
