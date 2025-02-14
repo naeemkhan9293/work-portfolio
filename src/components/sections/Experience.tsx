@@ -1,6 +1,7 @@
 "use client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ExperienceCard } from "../cards/experience-feature-card";
+import { BlurFade } from "../magicui/blur-fade";
 
 const education = [
   {
@@ -47,35 +48,41 @@ export function Experience() {
     >
       <div className="max-w-4xl w-full">
         <Tabs defaultValue="education" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 max-w-[400px] mx-auto">
-            <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="work">Work Experience</TabsTrigger>
-          </TabsList>
+          <BlurFade delay={0.15} inView>
+            <TabsList className="grid w-full grid-cols-2 max-w-[400px] mx-auto">
+              <TabsTrigger value="education">Education</TabsTrigger>
+              <TabsTrigger value="work">Work Experience</TabsTrigger>
+            </TabsList>
+          </BlurFade>
 
           <TabsContent
             value="education"
             className="mt-8 grid md:grid-cols-2 gap-3"
           >
-            {education.map((item) => (
-              <ExperienceCard
-                key={`edu-${item.title}`}
-                title={item.title}
-                institution={item.institution}
-                period={item.period}
-                description={item.description}
-              />
+            {education.map((item, idx) => (
+              <BlurFade delay={0.15 * idx} inView key={idx}>
+                <ExperienceCard
+                  key={`edu-${item.title}`}
+                  title={item.title}
+                  institution={item.institution}
+                  period={item.period}
+                  description={item.description}
+                />
+              </BlurFade>
             ))}
           </TabsContent>
 
           <TabsContent value="work" className="mt-8 grid md:grid-cols-2 gap-3">
-            {work.map((item) => (
-              <ExperienceCard
-                key={`work-${item.title}`}
-                title={item.title}
-                institution={item.institution}
-                period={item.period}
-                description={item.description}
-              />
+            {work.map((item, idx) => (
+              <BlurFade delay={0.15 * idx} inView key={idx}>
+                <ExperienceCard
+                  key={`work-${item.title}`}
+                  title={item.title}
+                  institution={item.institution}
+                  period={item.period}
+                  description={item.description}
+                />
+              </BlurFade>
             ))}
           </TabsContent>
         </Tabs>

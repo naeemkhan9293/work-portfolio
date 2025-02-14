@@ -4,6 +4,7 @@ import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import { MagicCard } from "../ui/magic-card";
 import { useTheme } from "next-themes";
+import { BlurFade } from "../magicui/blur-fade";
 
 const projects = [
   {
@@ -69,62 +70,65 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="w-full min-h-screen flex items-center justify-center py-20"
+      className="w-full min-h-screen  flex items-center justify-center py-20"
     >
-      <div className="max-w-4xl mx-auto space-y-12">
-        <div className="text-center space-y-4">
-          <h2 className="text-3xl font-bold tracking-tight">
-            Featured Projects
-          </h2>
-          <p className="text-muted-foreground max-w-[85ch] mx-auto">
-            Here are some of my recent projects that showcase my skills and
-            experience.
-          </p>
-        </div>
+      <div className="mx-auto space-y-12">
+        <BlurFade delay={0.15} inView>
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl font-bold tracking-tight">
+              Featured Projects
+            </h2>
+            <p className="text-muted-foreground max-w-[85ch] mx-auto">
+              Here are some of my recent projects that showcase my skills and
+              experience.
+            </p>
+          </div>
+        </BlurFade>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {projects.map((project, index) => (
-            <MagicCard
-              key={index}
-              className="cursor-pointer shadow-2xl p-5"
-              gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
-            >
-              <div className="grid gap-5">
-                <div>
-                  <h1 className="text-xl font-bold">{project.title}</h1>
-                  <p>{project.description}</p>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-2 py-1 bg-secondary text-secondary-foreground rounded-md text-sm group-hover:bg-primary/10 transition-colors duration-300"
+            <BlurFade delay={0.15 * index} inView key={index}>
+              <MagicCard
+                className="cursor-pointer shadow-2xl p-5"
+                gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
+              >
+                <div className="grid gap-5">
+                  <div>
+                    <h1 className="text-xl font-bold">{project.title}</h1>
+                    <p>{project.description}</p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-2 py-1 bg-secondary text-secondary-foreground rounded-md text-sm group-hover:bg-primary/10 transition-colors duration-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="space-x-2">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      asChild
+                      className="group-hover:border-primary/50"
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      <Link href={project.github} target="_blank">
+                        <Github className="mr-2 h-4 w-4" />
+                        Code
+                      </Link>
+                    </Button>
+                    <Button size="sm" asChild>
+                      <Link href={project.demo} target="_blank">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Demo
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
-                <div className="space-x-2">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    asChild
-                    className="group-hover:border-primary/50"
-                  >
-                    <Link href={project.github} target="_blank">
-                      <Github className="mr-2 h-4 w-4" />
-                      Code
-                    </Link>
-                  </Button>
-                  <Button size="sm" asChild>
-                    <Link href={project.demo} target="_blank">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Demo
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </MagicCard>
+              </MagicCard>
+            </BlurFade>
           ))}
         </div>
       </div>

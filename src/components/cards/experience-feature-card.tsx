@@ -15,9 +15,7 @@ export const ExperienceCard = ({
   <MagicCard className="flex items-center justify-center">
     <Card className="bg-transparent border-none">
       <CardHeader>
-        <CardTitle className="transition-transform duration-300">
-          {title}
-        </CardTitle>
+        <CardTitle>{title}</CardTitle>
         <p className="text-sm text-muted-foreground">
           {institution} • {period}
         </p>
