@@ -53,7 +53,7 @@ const projects = [
       "Stripe",
     ],
     github: "#",
-    demo: "https://www.biid.com/",
+    demo: "https://www.biidit.com/",
   },
   {
     title: "Venday",
