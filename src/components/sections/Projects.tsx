@@ -53,7 +53,7 @@ const projects = [
       "Stripe",
     ],
     github: "#",
-    demo: "https://market-z-ten.vercel.app/",
+    demo: "https://www.biid.com/",
   },
   {
     title: "Venday",
