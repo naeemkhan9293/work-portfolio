@@ -30,7 +30,9 @@ export function Hero() {
 
         <BoxReveal duration={0.25 * 1.5} boxColor="5146e628">
           <div className="flex gap-4 mt-6">
-            <Button size="lg">View My Work</Button>
+            <Button size="lg">
+              <a href="#projects">View My Work</a>
+            </Button>
             <Button size="lg" variant="outline">
               Contact Me
             </Button>
