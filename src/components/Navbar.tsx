@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { NavigationMenu } from "@/components/ui/navigation-menu";
 import { Code2, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 export function Navbar() {
   const { setTheme, theme } = useTheme();
@@ -17,10 +18,10 @@ export function Navbar() {
         
         <NavigationMenu>
           <ul className="hidden md:flex items-center gap-6">
-            <li><a href="#home" className="text-sm font-medium hover:text-primary">Home</a></li>
+            <li><Link href="/" className="text-sm font-medium hover:text-primary">Home</Link></li>
             <li><a href="#about" className="text-sm font-medium hover:text-primary">About</a></li>
             <li><a href="#projects" className="text-sm font-medium hover:text-primary">Projects</a></li>
-            <li><a href="#blog" className="text-sm font-medium hover:text-primary">Blog</a></li>
+            <li><Link href="/blog" className="text-sm font-medium hover:text-primary">Blogs</Link></li>
             <li><a href="#work" className="text-sm font-medium hover:text-primary">Work</a></li>
             <li><a href="#contact" className="text-sm font-medium hover:text-primary">Contact</a></li>
           </ul>

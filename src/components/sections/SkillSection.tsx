@@ -1,5 +1,5 @@
 "use client";
-import { IconCloudDemo } from "../cloud-icons";
+// import { IconCloudDemo } from "../cloud-icons";
 import { BlurFade } from "../magicui/blur-fade";
 import { MagicCard } from "../ui/magic-card";
 import { useTheme } from "next-themes";
@@ -18,17 +18,17 @@ const skills = [
   "Stripe",
 ];
 
-export function About() {
+export function SkillSection() {
   const { theme } = useTheme();
   return (
     <section
-      id="about"
+      id="skills"
       className="w-full min-h-screen flex items-center justify-center py-20 relative"
     >
       <div className="max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-4">
           <BlurFade delay={0.25} inView>
-            <h2 className="text-3xl font-bold tracking-tight">About Me</h2>
+            <h2 className="text-3xl font-bold tracking-tight">Skills i have</h2>
           </BlurFade>
           <BlurFade delay={0.25} inView>
             <p className="text-muted-foreground max-w-[85ch] mx-auto">
@@ -54,7 +54,7 @@ export function About() {
           ))}
         </div>
       </div>
-      {/* <div className="absolute -left- top-1/3 ">
+      {/* <div className="absolute">
         <IconCloudDemo />
       </div> */}
     </section>
