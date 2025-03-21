@@ -3,7 +3,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { SkillSection } from "@/components/sections/SkillSection";
 import { Projects } from "@/components/sections/Projects";
-import { Blog } from "@/components/sections/Blog";
+// import { Blog } from "@/components/sections/Blog";
 import { Experience } from "@/components/sections/Experience";
 import { Footer } from "@/components/sections/Footer";
 import { Navbar } from "@/components/Navbar";
