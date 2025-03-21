@@ -4,10 +4,10 @@ import { Code2 } from "lucide-react";
 import { AuroraText } from "../ui/aurora-text";
 import { BoxReveal } from "../magicui/box-reveal";
 import Image from "next/image";
-import Lottie from "lottie-react";
 import bgGradient from "@/assets/gradient-bg.json";
 import { BlurFade } from "../magicui/blur-fade";
-
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 export function Hero() {
   return (
     <section
