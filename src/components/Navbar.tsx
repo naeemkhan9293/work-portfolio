@@ -4,10 +4,15 @@ import { NavigationMenu } from "@/components/ui/navigation-menu";
 import { Code2, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export function Navbar() {
   const { setTheme, theme } = useTheme();
-
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null;
   return (
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 border-b">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
@@ -15,15 +20,54 @@ export function Navbar() {
           <Code2 className="h-6 w-6" />
           <span className="font-bold">DevPortfolio</span>
         </div>
-        
+
         <NavigationMenu>
           <ul className="hidden md:flex items-center gap-6">
-            <li><Link href="/" className="text-sm font-medium hover:text-primary">Home</Link></li>
-            <li><a href="#projects" className="text-sm font-medium hover:text-primary">Projects</a></li>
-            <li><a href="#about" className="text-sm font-medium hover:text-primary">About</a></li>
-            {/* <li><Link href="/blog" className="text-sm font-medium hover:text-primary">Blogs</Link></li> */}
-            <li><a href="#work" className="text-sm font-medium hover:text-primary">Work</a></li>
-            <li><a href="#contact" className="text-sm font-medium hover:text-primary">Contact</a></li>
+            <li>
+              <Link href="/" className="text-sm font-medium hover:text-primary">
+                Home
+              </Link>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                className="text-sm font-medium hover:text-primary"
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                className="text-sm font-medium hover:text-primary"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <Link
+                href="/blog"
+                className="text-sm font-medium hover:text-primary"
+              >
+                Blogs
+              </Link>
+            </li>
+            <li>
+              <a
+                href="#work"
+                className="text-sm font-medium hover:text-primary"
+              >
+                Work
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="text-sm font-medium hover:text-primary"
+              >
+                Contact
+              </a>
+            </li>
           </ul>
         </NavigationMenu>
 
