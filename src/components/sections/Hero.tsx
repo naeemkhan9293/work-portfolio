@@ -6,6 +6,7 @@ import { BoxReveal } from "../magicui/box-reveal";
 import Image from "next/image";
 import Lottie from "lottie-react";
 import bgGradient from "@/assets/gradient-bg.json";
+import { BlurFade } from "../magicui/blur-fade";
 
 export function Hero() {
   return (
@@ -42,7 +43,12 @@ export function Hero() {
           </div>
         </BoxReveal>
       </div>
-      <div className="col-span-5 row-span-7 row-start-3 row-end-11 relative w-full h-full flex items-center justify-center ">
+      {/* <div className=""> */}
+      <BlurFade
+        delay={0.25 * 0.05}
+        inView
+        className="h-full w-full col-span-5 row-span-7 row-start-3 row-end-11 relative flex items-center justify-center "
+      >
         <Lottie animationData={bgGradient} className="absolute" />
         <div className="relative h-full w-full max-w-sm max-h-[384px] rounded-full">
           <Image
@@ -52,7 +58,8 @@ export function Hero() {
             className="object-cover object-[50%_5%] rounded-full"
           />
         </div>
-      </div>
+      </BlurFade>
+      {/* </div> */}
     </section>
   );
 }
