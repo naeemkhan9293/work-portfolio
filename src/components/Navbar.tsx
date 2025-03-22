@@ -1,20 +1,22 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { NavigationMenu } from "@/components/ui/navigation-menu";
-import { Code2, Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { AuroraText } from "./ui/aurora-text";
 
 export function Navbar() {
   const { setTheme, theme } = useTheme();
   return (
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 border-b">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Code2 className="h-6 w-6" />
-          <span className="font-bold">DevPortfolio</span>
+        <div className="">
+          <AuroraText>&lt;Naeem /&gt;</AuroraText>
         </div>
+        {/* <div className="relative w-16 h-16">
+          <Image src="/logo.png" alt="logo" fill  />
+        </div> */}
 
         <NavigationMenu>
           <ul className="hidden md:flex items-center gap-6">
