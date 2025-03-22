@@ -9,6 +9,9 @@ export default async function page({
 }) {
   const { title } = await params;
   const blog: BlogTypes = await getBlogBySlug(title);
-  const isBrowser = typeof window !== "undefined";
-  return <div className="pt-20">{isBrowser ? <Blog blog={blog} /> : null}</div>;
+  return (
+    <div className="pt-20">
+      <Blog blog={blog} />
+    </div>
+  );
 }
