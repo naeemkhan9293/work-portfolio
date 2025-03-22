@@ -7,6 +7,7 @@ import Image from "next/image";
 import bgGradient from "@/assets/gradient-bg.json";
 import { BlurFade } from "../magicui/blur-fade";
 import dynamic from "next/dynamic";
+import { ShinyButton } from "../magicui/shiny-button";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 export function Hero() {
   return (
@@ -37,9 +38,9 @@ export function Hero() {
             <Button size="lg">
               <a href="#projects">View My Work</a>
             </Button>
-            <Button size="lg" variant="outline">
-              Contact Me
-            </Button>
+            <ShinyButton className="bg-gray-800">
+              <p className="!text-white mt-1">Contact Me</p>
+            </ShinyButton>
           </div>
         </BoxReveal>
       </div>
