@@ -44,7 +44,9 @@ export function Hero() {
               building seamless digital experiences using MERN and beyond.
             </p>
             <div className="flex gap-10">
-              <IoLogoWhatsapp className="w-10 h-10 text-green-700" />
+              <>
+                <IoLogoWhatsapp className="w-10 h-10 text-green-700" />
+              </>
               <FaFacebook className="w-10 h-10 text-blue-700" />
               <FaGithub className="w-10 h-10 text-black" />
               <FaLinkedin className="w-10 h-10 text-blue-700" />
@@ -52,19 +54,7 @@ export function Hero() {
             </div>
           </div>
         </BoxReveal>
-
-        <BoxReveal duration={0.25 * 1.5} boxColor="5146e628">
-          <div className="flex gap-4 mt-6">
-            <Button size="lg">
-              <a href="#projects">View My Work</a>
-            </Button>
-            <ShinyButton className="bg-gray-800" onClick={openWhatsAppInNewTab}>
-              <p className="!text-white mt-1">Contact Me</p>
-            </ShinyButton>
-          </div>
-        </BoxReveal>
       </div>
-      {/* <div className=""> */}
       <BlurFade
         delay={0.25 * 0.05}
         inView
@@ -80,8 +70,6 @@ export function Hero() {
           />
         </div>
       </BlurFade>
-
-      <div className="">hello world</div>
     </section>
   );
 }
