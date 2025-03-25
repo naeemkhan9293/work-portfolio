@@ -12,9 +12,9 @@ export default function Home() {
     <main className="min-h-screen bg-background flex flex-col">
       <div className="flex-1 flex flex-col items-center justify-center w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <Hero />
-        <SkillSection />
         <Projects />
         {/* <Blog /> */}
+        <SkillSection />
         <Experience />
       </div>
       <Footer />

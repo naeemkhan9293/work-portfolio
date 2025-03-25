@@ -28,7 +28,7 @@ export function SkillSection() {
       <div className="max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-4">
           <BlurFade delay={0.25} inView>
-            <h2 className="text-3xl font-bold tracking-tight">Skills i have</h2>
+            <h2 className="text-3xl font-bold tracking-tight">Areas of Expertise</h2>
           </BlurFade>
           <BlurFade delay={0.25} inView>
             <p className="text-muted-foreground max-w-[85ch] mx-auto">
